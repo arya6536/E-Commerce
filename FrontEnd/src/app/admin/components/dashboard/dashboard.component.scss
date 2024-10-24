@@ -1,0 +1,168 @@
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Space out cards */
+    padding: 20px;
+}
+
+.product-card {
+    width: 300px; /* Fixed width for cards */
+    margin: 15px; /* Space between cards */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth effect */
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+.product-image img {
+    width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px 8px 0 0; /* Rounded corners for the top */
+}
+
+.product-details {
+    padding: 15px; /* Padding inside the card */
+    text-align: left; /* Align text to the left */
+}
+
+.product-name {
+    font-size: 1.5rem; /* Slightly larger font size */
+    font-weight: bold; /* Bold product name */
+    color: #333; /* Darker text color */
+    margin-bottom: 10px; /* Space below the name */
+}
+
+.product-description {
+    font-size: 1rem; /* Normal font size for description */
+    color: #555; /* Lighter color for description */
+    margin-bottom: 15px; /* Space below the description */
+}
+
+.product-info {
+    display: flex; /* Flex for info rows */
+    flex-direction: column; /* Column layout */
+}
+
+.info-row {
+    display: flex; /* Flex for each row */
+    justify-content: space-between; /* Space between label and value */
+    margin: 5px 0; /* Space between rows */
+}
+
+.info-label {
+    font-weight: bold; /* Bold for labels */
+    color: #787878; /* Color for labels */
+}
+
+.info-value {
+    color: #333; /* Dark color for values */
+    font-weight: bold;
+}
+/* Container styling for actions */
+.actions {
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-start; /* Align items to the left */
+    gap: 10px; /* Add space between buttons */
+    margin-top: 20px; /* Add space above the buttons */
+}
+
+/* Common button styling */
+button {
+    font-size: 14px; /* Medium font size */
+    padding: 8px 16px; /* Padding for a comfortable button size */
+    border-radius: 4px; /* Slightly rounded corners */
+    border: none; /* Remove border */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth color transitions */
+    text-transform: uppercase; /* Uppercase text for a cleaner look */
+    color: white; /* Default text color */
+}
+
+/* Styling for the update button */
+.update-button {
+    background-color: #007bff; /* Primary color */
+}
+
+/* Update button hover state */
+.update-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    color: white; /* Keep the text color white */
+}
+
+/* Styling for the delete button */
+.delete-button {
+    background-color: #dc3545; /* Warn color */
+    color: #fff;
+}
+
+/* Delete button hover state */
+.delete-button:hover {
+    background-color: #c82333; /* Darker shade on hover */
+    color: white; /* Keep the text color white */
+}
+
+/* Focus state for accessibility */
+button:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a custom focus effect */
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.search-input {
+    width: 50%;
+    min-width: 300px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+mat-icon {
+    cursor: pointer;
+    font-size: 24px;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+
+mat-label {
+    font-size: 1.1em;
+    color: #787878;
+}
+
+input[matInput] {
+    padding: 10px;
+    font-size: 1em;
+}
+
+button[mat-button] {
+    margin-left: 10px;
+}
+
+mat-icon {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+button[mat-button]:hover {
+    background-color: #1976d2;
+    color: #fff;
+}
+
+button[mat-button][disabled] {
+    background-color: #e0e0e0;
+    color: #bdbdbd;
+    @media (max-width: 768px) {
+        .search-input {
+            width: 80%;
+        }
+    }
+}

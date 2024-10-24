@@ -1,0 +1,52 @@
+<div class="container">
+    <div *ngFor="let order of myOrders" class="order-card">
+        <div class="order-header">
+            <!-- <div class="order-tracking">
+                <span class="label">Tracking ID:</span>
+                <span class="value">{{ order.trackingId }}</span>
+            </div> -->
+            <div class="order-date">
+                <span class="label">Date:</span>
+                <span class="value">{{ order.date | date: 'MMM d, y'}}</span>
+            </div>
+        </div>
+        <div class="order-details">
+            <div class="order-amount">
+                <span class="label">Amount:</span>
+                <span class="value"> INR {{ order.amount }} /-</span>
+            </div>
+            <div class="order-description">
+                <span class="label">Description:</span>
+                <span class="value">{{ order.orderDescription }}</span>
+            </div>
+            <div class="order-address">
+                <span class="label">Address:</span>
+                <span class="value">{{ order.address }}</span>
+            </div>
+        </div>
+        <div class="order-footer">
+            <div class="order-status">
+                <span class="label">Status:</span>
+                <span class="value" [ngClass]="{
+                    'shipped': order.orderStatus === 'Shipped',
+                    'delivered': order.orderStatus === 'Delivered'
+                }">
+                    {{ order.orderStatus }}
+                </span>
+            </div>
+
+
+            <div class="order-actions">
+                <span> Action: </span>
+                <button class="action-button" [ngClass]="{
+                    'shipped-button': order.orderStatus === 'Shipped',
+                    'delivered-button': order.orderStatus === 'Delivered'
+                }">
+                    {{ order.orderStatus }}
+                </button>
+            </div>
+
+
+        </div>
+    </div>
+</div>

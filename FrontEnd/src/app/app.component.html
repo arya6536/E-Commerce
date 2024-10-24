@@ -1,0 +1,33 @@
+
+
+<nav class="navbar">
+  <div class="navbar-left">
+    <a href="#">E-Commerce</a>
+  </div>
+  
+  <div class="navbar-right" *ngIf="isAdminLoggedIn">
+    <a routerLink="/admin/dashboard">Dashboard</a>
+    <a routerLink="/admin/category">Category</a>
+    <a routerLink="/admin/product">Product</a>
+    <a routerLink="/admin/orders">Orders</a>
+    <a (click)="logout()">Logout</a>
+  </div>
+
+  <div class="navbar-right" *ngIf="isCustomerLoggedIn">
+    <a routerLink="/customer/dashboard">Dashboard</a>
+    <a routerLink="/customer/cart">Cart</a>
+    <a routerLink="/customer/my_orders">Order</a>
+    <a routerLink="/customer/profile">Profile</a>
+    <a (click)="logout()">Logout</a>
+  </div>
+
+  <div class="navbar-right" *ngIf="!isCustomerLoggedIn && !isAdminLoggedIn">
+    <a routerLink="/signup">Register</a>  
+    <a routerLink="/login">Login</a>  
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+
+

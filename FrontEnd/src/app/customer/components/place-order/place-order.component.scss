@@ -1,0 +1,129 @@
+/* New container styling for a modern feel */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Gradient background */
+    padding: 30px;
+}
+
+/* Updated card styling for a modern look */
+mat-card {
+    max-width: 450px; /* Increased max-width for more spacious layout */
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); /* Strong shadow for depth */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for the card */
+mat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Stylish card title */
+mat-card-title {
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333333;
+    margin-top: 20px;
+}
+
+/* Card content styling */
+mat-card-content {
+    padding: 25px;
+    background-color: #f3f3f3;
+    border-radius: 0 0 16px 16px;
+}
+
+/* Styling for form fields */
+mat-form-field {
+    width: 100%;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+}
+
+/* Button row with stylish buttons */
+.button-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+/* Stylish submit button */
+.order-button {
+    background: linear-gradient(145deg, #4CAF50, #388E3C); /* Green gradient for button */
+    color: #ffffff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s;
+    font-size: 1em;
+}
+
+/* Hover effect for submit button */
+.order-button:hover {
+    background: linear-gradient(145deg, #388E3C, #4CAF50);
+    transform: scale(1.1);
+}
+
+/* Close button styling */
+.close-button {
+    background-color: #f5f5f5;
+    color: #555555;
+    border: 2px solid #d3d3d3;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s;
+    font-size: 1em;
+}
+
+/* Hover effect for close button */
+.close-button:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
+
+/* Order status badge styles */
+.order-status {
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Specific status colors */
+.shipped {
+    background-color: #2196F3; /* Blue for shipped */
+    color: white;
+}
+
+.delivered {
+    background-color: #4CAF50; /* Green for delivered */
+    color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animation applied to the container */
+.container {
+    animation: fadeIn 1s ease-in-out;
+}

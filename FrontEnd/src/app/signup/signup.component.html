@@ -1,0 +1,56 @@
+<div class="form-container">
+    <h2>SIGN UP</h2>
+    <form [formGroup]="signupForm">
+      
+      <!-- Name Field -->
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" formControlName="name" placeholder="Enter your name">
+        <div *ngIf="signupForm.get('name')?.invalid && signupForm.get('name')?.touched" class="error-message">
+          Please provide a valid name.
+        </div>
+      </div>
+  
+      <!-- Email Field -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" formControlName="email" placeholder="Enter your email">
+        <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched" class="error-message">
+          Please provide a valid email address.
+        </div>
+      </div>
+  
+      <!-- Password Field -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="password-container">
+          <input [type]="hidePassword ? 'password' : 'text'" id="password" formControlName="password" placeholder="Enter your password">
+          <button type="button" class="toggle-password" (click)="togglePasswordVisibility('password')">
+            <i [class]="hidePassword ? 'fas fa-eye' : 'fas fa-eye-slash'"></i>
+          </button>
+        </div>
+        <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched" class="error-message">
+          Password must be at least 6 characters long.
+        </div>
+      </div>
+  
+      <!-- Confirm Password Field -->
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <div class="password-container">
+          <input [type]="hideConfirmPassword ? 'password' : 'text'" id="confirmPassword" formControlName="confirmPassword" placeholder="Confirm password">
+          <button type="button" class="toggle-password" (click)="togglePasswordVisibility('confirmPassword')">
+            <i [class]="hideConfirmPassword ? 'fas fa-eye' : 'fas fa-eye-slash'"></i>
+          </button>
+        </div>
+        <div *ngIf="signupForm.get('confirmPassword')?.invalid && signupForm.get('confirmPassword')?.touched" class="error-message">
+          Confirm password must match the password.
+        </div>
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" class="submit-btn" (click)="onSubmit()">SIGN UP</button>
+  
+    </form>
+  </div>
+  

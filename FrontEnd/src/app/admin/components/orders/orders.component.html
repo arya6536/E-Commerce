@@ -1,0 +1,36 @@
+<div class="container">
+    <mat-card class="orders-overview">
+      <mat-card-header>
+        <mat-card-title>Orders Overview</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="orders-grid">
+          <div *ngFor="let order of orders" class="order-card">
+            <mat-card class="order-card-content">
+              <mat-card-header>
+                <!-- <mat-card-title>Order ID: {{ order.trackingId }}</mat-card-title> -->
+                <mat-card-subtitle>User: {{ order.userName }}</mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content>
+                <p><strong>Amount:</strong> INR {{ order.amount }} /-</p>
+                <p><strong>Description:</strong> {{ order.description }}</p>
+                <p><strong>Address:</strong> {{ order.address }}</p>
+                <p><strong>Date:</strong> {{ order.date | date:'medium' }}</p>
+                <p><strong>Status:</strong> 
+                  <span [ngClass]="{'shipped': order.orderStatus === 'Shipped', 'delivered': order.orderStatus === 'Delivered'}">{{ order.orderStatus }}</span>
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-raised-button color="primary" [matMenuTriggerFor]="orderMenu">Action</button>
+                <mat-menu #orderMenu="matMenu" matMenuPosition="below">
+                  <button mat-menu-item (click)="changeOrderStatus(order.id, 'Shipped')">Shipped</button>
+                  <button mat-menu-item (click)="changeOrderStatus(order.id, 'Delivered')">Delivered</button>
+                </mat-menu>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
